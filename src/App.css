@@ -1,0 +1,399 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f3ef;
+  color: #1f1f1f;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* PAGE TÉLÉPHONE */
+
+.phone-page {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(180deg, #fff6e9, #f2eee8);
+}
+
+.phone-card {
+  width: 100%;
+  max-width: 430px;
+  background: white;
+  border-radius: 26px;
+  padding: 24px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.phone-card h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #666;
+}
+
+.field-label {
+  display: block;
+  margin-top: 22px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.text-input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  border: 2px solid #ddd;
+  font-size: 18px;
+}
+
+.base-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.base-button {
+  border: 2px solid #ddd;
+  background: #f7f7f7;
+  border-radius: 16px;
+  padding: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.selected-white {
+  background: #fff1cf;
+  border-color: #d8aa50;
+}
+
+.selected-red {
+  background: #ffe0d8;
+  border-color: #df4b2f;
+}
+
+.ingredients-list {
+  display: grid;
+  gap: 10px;
+}
+
+.ingredient-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #f7f7f7;
+  font-size: 18px;
+}
+
+.ingredient-row input {
+  width: 22px;
+  height: 22px;
+}
+
+.send-button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+  border: none;
+  border-radius: 18px;
+  background: #1f8f4d;
+  color: white;
+  font-weight: 800;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+}
+
+.message {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #eef9f0;
+  color: #166534;
+  font-weight: 700;
+}
+
+/* PAGE FOURNEAU */
+
+.kitchen-page {
+  height: 100vh;
+  padding: 12px;
+  background: #ebe7df;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.kitchen-header {
+  min-height: 62px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.kitchen-header h1 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 34px);
+}
+
+.kitchen-header p {
+  margin: 2px 0 0;
+  font-size: clamp(15px, 1.8vw, 19px);
+  color: #555;
+}
+
+.kitchen-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sound-button {
+  border: none;
+  background: #ffffff;
+  color: #1f1f1f;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: clamp(14px, 1.6vw, 17px);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+}
+
+.sound-button.active {
+  background: #1f8f4d;
+  color: white;
+}
+
+.waiting-badge {
+  background: #1f1f1f;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: clamp(14px, 1.6vw, 17px);
+  white-space: nowrap;
+}
+
+.orders-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  min-height: 0;
+}
+
+.order-card {
+  background: white;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-top: 9px solid #ccc;
+  min-height: 0;
+}
+
+.order-card.rouge {
+  border-top-color: #df4b2f;
+}
+
+.order-card.blanche {
+  border-top-color: #d8aa50;
+}
+
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.order-top h2 {
+  margin: 0;
+  font-size: clamp(22px, 2.6vw, 31px);
+  text-transform: uppercase;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-top span {
+  font-size: clamp(13px, 1.5vw, 16px);
+  color: #555;
+  white-space: nowrap;
+}
+
+.base-badge {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: clamp(13px, 1.5vw, 16px);
+}
+
+.base-badge.rouge {
+  background: #ffe0d8;
+  color: #9f250e;
+}
+
+.base-badge.blanche {
+  background: #fff1cf;
+  color: #8a5c00;
+}
+
+.order-card ul {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  font-size: clamp(14px, 1.8vw, 20px);
+  line-height: 1.15;
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+}
+
+.order-card li {
+  background: #f4f1ec;
+  border-radius: 999px;
+  padding: 6px 8px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.done-button {
+  border: none;
+  background: #1f8f4d;
+  color: white;
+  padding: 10px;
+  border-radius: 14px;
+  font-size: clamp(16px, 2vw, 21px);
+  font-weight: 800;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(24px, 3vw, 34px);
+  color: #777;
+}
+/* PAGE QR CODE */
+
+.qr-page {
+  min-height: 100vh;
+  background: #f5f3ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.qr-card {
+  width: 100%;
+  max-width: 1100px;
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.qr-card h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.qr-card > p {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #555;
+}
+
+.qr-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.qr-item {
+  padding: 24px;
+  border-radius: 24px;
+  background: #faf8f4;
+  border: 2px solid #ece6dc;
+}
+
+.qr-item h2 {
+  margin: 0 0 18px;
+  font-size: 30px;
+}
+
+.qr-box {
+  margin: 0 auto 18px;
+  padding: 24px;
+  display: inline-flex;
+  background: white;
+  border-radius: 24px;
+  border: 3px solid #eee;
+}
+
+.qr-url {
+  margin: 0;
+  word-break: break-all;
+  font-size: 16px;
+  color: #777;
+}
+
+/* RESPONSIVE QR SUR PETIT ÉCRAN */
+
+@media (max-width: 800px) {
+  .qr-card {
+    padding: 22px;
+  }
+
+  .qr-card h1 {
+    font-size: 34px;
+  }
+
+  .qr-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-item h2 {
+    font-size: 26px;
+  }
+}
